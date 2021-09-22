@@ -2,7 +2,7 @@ package Friend;
 
 
 
-// double val = Double.parseDouble("23.5")
+// double val = Double.parseDouble("23.5");
 //키 몸무게 쓸 때
 import java.util.Scanner;
 
@@ -73,16 +73,70 @@ public class FriendMain {
 							}
 							if(!weight.equals("")) {
 								friendList[i].setWeight(Integer.parseInt(weight));
-								
+								// double val = Double.parseDouble("23.5");
+
 							}
 							isExist = true;
 						}
 				}
 					if(isExist)
-						System.outp.println("정상적으로 수정되었습니다.");
-					els
+						System.out.println("정상적으로 수정되었습니다.");
+					else
+						System.out.println("존재하지 않는 정보입니다.");
+			} else if(menu == 3) {
+				System.out.println("친구 목록 메뉴입니다.");
+				for(Friend friend : friendList) {
+					if(friend !=null)
+						friend.showInfo();
+					
+				}
+			} else if (menu == 4) {
+				System.out.println("친구 조회 목록입니다.");
+				String search = readStr("조회할 친구 이름을 입력하세요");
+				for (Friend friend : friendList) {
+					if(friend !=null && friend.getName().indexOf(search) !=-1)
+						friend.showInfo();
+					
+				}
+			} else if(menu == 5) {
+				System.out.println("친구 삭제 메뉴입니다.");
+			   String search = readStr("삭제할 친구명을 입력하세요");
+			   	for(int i = 0; i < friendList.length; i++) {
+			   		if (friendList[i] != null && friendList[i].getName().indexOf(search) != -1)
+			   			friendList[i] = null;
+			   		
+			   	}
+			   	System.out.println("삭제 완료");
+			   	
+			} else if( menu == 6) {
+				System.out.println("종료.");
+				break;
 			}
 
+		} //end of while
+		System.out.println("끝");
+	} //end of main
+	
+	public static String readStr(String msg) {
+		System.out.println(msg);
+		return scn.nextLine();
+		
+		
+		
+	}
+	
+	public static int readInt(String msg) {
+		System.out.println(msg);
+		int result = 0;
+		while (true) {
+			String val = scn.nextLine();
+			try {
+				result = Integer.parseInt(val);
+				break;
+			} catch (Exception e) {
+				System.out.println("잘못된 값을 입력했습니다. 다시 입력하세요.");
+			}
 		}
+		return result;
 	}
 }

@@ -29,12 +29,9 @@ public class BookLibrary {
 				String auth = readStr("저자를 입력하세요.");
 				String press = readStr("출판사를 입력하세요");
 				int price = readInt("가격을 입력하세요");
-				
-				
-				
-				
+
 				Book book = new Book(title, auth, press, price);
-				
+
 				for (int i = 0; i < kyoboLib.length; i++) {
 					if (kyoboLib[i] == null) {
 						kyoboLib[i] = book;
@@ -45,36 +42,36 @@ public class BookLibrary {
 
 			} else if (menu == 2) {
 				System.out.println("도서수정 메뉴입니다.");
-				//도서명으로 찾아와서 => 도서명(키의 역할을 함)
-				//저자, 출판사, 가격 => 항목변경.
-				//정확한이름을입력해갸지고..
-				String search = readStr("수정할 도서명을 입력하세용"); //"" <null은아니지만 값이 없는 상태
+				// 도서명으로 찾아와서 => 도서명(키의 역할을 함)
+				// 저자, 출판사, 가격 => 항목변경.
+				// 정확한이름을입력해갸지고..
+				String search = readStr("수정할 도서명을 입력하세용"); // "" <null은아니지만 값이 없는 상태
 				String author = readStr("변경할 저자를 입력하세용[변경 안하려면 Ent]");
 				String press = readStr("변경할 출판사를 입력하세요[변경 안하려면 Ent]");
 				String price = readStr("변경할 금액을 입력하세요[변경 안하려면 Ent]");
 				boolean isExist = false;
-				
-				for(int i = 0; i < kyoboLib.length; i++) {
-					//한 건 찾아온 경우
-					if(kyoboLib[i] !=null && kyoboLib[i].getTitle().equals(search)) {
-						if(!author.equals("")) {
+
+				for (int i = 0; i < kyoboLib.length; i++) {
+					// 한 건 찾아온 경우
+					if (kyoboLib[i] != null && kyoboLib[i].getTitle().equals(search)) {
+						if (!author.equals("")) {
 							kyoboLib[i].setAuthor(author);
-							
+
 						}
-						if(!press.equals("")) {
+						if (!press.equals("")) {
 							kyoboLib[i].setPress(press);
 						}
-						if(!price.equals("")) {
+						if (!price.equals("")) {
 							kyoboLib[i].setPrice(Integer.parseInt(price));
-												//가격이라 Integer.parseInt(price)로 써줌
-						
+							// 가격이라 Integer.parseInt(price)로 써줌
+
 						}
 						isExist = true;
 					}
 				}
-				if(isExist)
+				if (isExist)
 					System.out.println("정상적으로 수정되었습니다.");
-				else 
+				else
 					System.out.println("존재하지 않는 책입니다.");
 
 			} else if (menu == 3) {
@@ -97,7 +94,7 @@ public class BookLibrary {
 				for (int i = 0; i < kyoboLib.length; i++) { // -1 : 값이 있다는 뜻
 					if (kyoboLib[i] != null && kyoboLib[i].getTitle().indexOf(search) != -1)
 						kyoboLib[i] = null; // 원래 값에서 null을 추가해주면 삭제됨
-							//배열을 지워주는게 아니라 불러온 값을 지워주는 것임
+					// 배열을 지워주는게 아니라 불러온 값을 지워주는 것임
 				}
 				System.out.println("삭제 완료");
 			} else if (menu == 6) {

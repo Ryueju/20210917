@@ -27,8 +27,8 @@ public class Car {
 		this.carName = carName;
 		this.carModel = carModel;
 		this.carPrice = carPrice;
-		Ttire = ttire;
+	//	Ttire = ttire;
 		this.maxSpeed = maxSpeed;
-		Tire = tire;
+	//	Tire = tire;
 	}
 }

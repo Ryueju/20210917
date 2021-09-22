@@ -56,7 +56,7 @@ public class Friend {
 		this.weight = weight;
 	}
 	public void showInfo() {
-		System.out.printf("*模备 捞抚 : %s, *模备 楷遏贸 : $s, *模备 email : $s, *模备 虐 : %d, *模备 个公霸 : %d \n", name, phone, email, height, weight);
+		System.out.printf("[ 捞抚 : %s , 楷遏贸 : %s , 皋老 : %s, 虐 : %d, 个公霸 : %d ] \n",name,phone,email,height,weight);
 		
 	}
 
