@@ -69,7 +69,7 @@ public class Account {
 			int balance = readInt("예금액 : ");
 			findAccount(ano).setBalace(findAccount(ano).getBalance() + balance);
 			System.out.println("예금이 완료되었습니다.");
-		}
+	//		System.out.println("잔액 :" + )		}
 
 	}
 
